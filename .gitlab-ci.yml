@@ -1,0 +1,15 @@
+variables:
+  DOCKER_TAG: "$GITLAB_USER_NAME/$CI_PROJECT_NAME"
+  GITLAB_TAG: "$CI_REGISTRY/$GITLAB_USER_NAME/$CI_PROJECT_NAME"
+  STACK: "faas"
+
+image: docker:stable
+
+build:
+  script:
+    - docker build -t $DOCKER_TAG -t $GITLAB_TAG .
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker push $GITLAB_TAG
+    - docker service update --image $GITLAB_TAG ${STACK}_${CI_PROJECT_NAME}
+    - docker login -u gllera -p $DOCKER_PASS
+    - docker push $DOCKER_TAG
