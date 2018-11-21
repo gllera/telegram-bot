@@ -21,3 +21,4 @@ assert.notEqual(null, config.OPENFAAS_URL, 'Environment variable OPENFAAS_URL no
 assert.notEqual(null, config.CHAT_PASSWORD, 'Environment variable CHAT_PASSWORD not defined')
 
 module.exports = config
+

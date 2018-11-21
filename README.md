@@ -20,3 +20,4 @@ docker run -it --rm \
    -e CHAT_PASSWORD=1234 \
    gllera/telegram-bot
 ```
+
