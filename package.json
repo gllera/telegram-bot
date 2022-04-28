@@ -9,7 +9,7 @@
   "author": "gllera",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^2.6.4",
     "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
